@@ -12,6 +12,7 @@ Demonstrar a sobrecarga que ocorre no adiamento de uma ISR para uma tarefa utili
 == APLICAÇÃO: 
 Para este exemplo foi criada uma variável global, no qual é incrementada dentro da ISR e através de uma tarefa que a exibe na serial.
 
-== ANÁLISE: A escolha do semáforo binário foi realizada pelo fato de ele ser implementado com uma fila de uma única posição no qual suporta no máximo um adiamento de ISR e outro em espera na fila. No caso a sobrecarga ocorre quando uma terceira interrupção acontece e é descartada pelo semáforo.
+== ANÁLISE: 
+A escolha do semáforo binário foi realizada pelo fato de ele ser implementado com uma fila de uma única posição no qual suporta no máximo um adiamento de ISR e outro em espera na fila. No caso a sobrecarga ocorre quando uma terceira interrupção acontece e é descartada pelo semáforo.
 Sendo assim o exemplo foi elaborado para que um botão fosse pressionado diversas vezes, enquanto valor do contador era mostrado na Serial. Como o contador era modificado na ISR poderia-se acompanhar na serial os valores que foram transmitidos para tarefa e os que foram descartados.
 O principal desafio desse exemplo foi o Efeito Bouncing produzido pelo botão, no qual gerava mais interrupções do que as desejadas, impedindo de ver claramente o descarte da tarefa. Para resolver esse problema foi criado gerador de sinal através de um timer autorealoader contido biblioteca ‘timmer.h’ do FreeRTOS. Esse gerador é responsável pelo disparo da ISR. A utilização do gerador de sinal tem como objetivo prover uma sinal periódico e sem riscos de bouncing. 
