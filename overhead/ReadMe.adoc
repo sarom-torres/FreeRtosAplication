@@ -1,10 +1,9 @@
 :Author: SaromTorres
-:Email: {AuthorEmail}
+:Email: sarom.t@aluno.ifsc.edu.br
 :Date: 06/06/2019
-:Revision: version#
 :License: Public Domain
 
-= Project: {Project}
+= Project: Overhead
 
 == OBJETIVO: 
 Demonstrar a sobrecarga que ocorre no adiamento de uma ISR para uma tarefa utilizando um semáforo binário
